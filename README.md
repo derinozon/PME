@@ -18,13 +18,17 @@ $ brew install sdl2_ttf
 $ brew install sdl2_mixer
 ```
 
-Windows: <br>
-You can download the development libraries [here](https://www.libsdl.org/download-2.0.php)
-
 Linux:
 ``` bash
-
+sudo apt install libsdl2-dev
+#optional
+sudo apt install libsdl2-mixer-dev
+sudo apt install libsdl2-ttf-dev
+sudo apt install libsdl2-image-dev
 ```
+
+Windows: <br>
+You can download the development libraries [here](https://www.libsdl.org/download-2.0.php)
 
 Usage
 --------
