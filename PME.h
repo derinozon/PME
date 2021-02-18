@@ -12,12 +12,8 @@
 	#define PORT 1
 #endif
 
-#ifndef USEGL
-	#define USEGL 0
-#endif
-
 #ifndef IMG
-	#define IMG 1
+	#define IMG 0
 #endif
 
 #ifndef MIX
@@ -25,7 +21,7 @@
 #endif
 
 #ifndef TTF
-	#define TTF 1
+	#define TTF 0
 #endif
 
 
