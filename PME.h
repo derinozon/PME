@@ -32,15 +32,17 @@
 	#include <emscripten.h>
 #endif
 
-#include <SDL2/SDL.h>
 
-#include <string>
-#include <vector>
+
+#include <string.h>
 #include <iostream>
 #include <algorithm>
 #include <cmath>
 #include <random>
 #include <sstream>
+
+#define SDL_MAIN_HANDLED
+#include <SDL.h>
 
 #if IMG == 1
 	#include <SDL2/SDL_image.h>

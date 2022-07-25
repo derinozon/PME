@@ -1,8 +1,8 @@
 #SETTINGS (Modify this)
-USEIMG := 1
+USEIMG := 0
 USEMIX := 0
-USETTF := 1
-DEBUG := 1
+USETTF := 0
+DEBUG := 0
 
 
 CCV = -std=c++11
@@ -45,13 +45,12 @@ else
 endif
 
 IN = demo/main.cpp
+LIST = -Ibuild\_deps\sdl2-src\include
 
 pc: $(DEMO) PME.h $(SRC_FILES)
-	mkdir -p build
-	$(CXX) $(CCV) $(CXXFLAGS) $(IN) -DPORT=1 $(DLIST) $(LIB) -o $(OUT)
+	$(CXX) $(CCV) $(CXXFLAGS) $(IN) $(LIST) -DPORT=1 $(DLIST) $(LIB) -o $(OUT)
 
 web: $(DEMO) PME.h $(SRC_FILES)
-	mkdir -p build
 	$(WC) $(CCV) $(IN) -DPORT=0 $(DLIST) $(WBIND) $(WSHELL) $(WFILE) -o build/index.html -s SINGLE_FILE=1 -s SDL2_IMAGE_FORMATS='["png"]'
 
 run:
@@ -59,4 +58,4 @@ run:
 
 #pip3 install quom
 header:
-	quom PME.h include/PME.h
+	quom PME.h dist/PME.h
