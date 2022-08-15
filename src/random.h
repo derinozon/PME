@@ -13,8 +13,9 @@ namespace PME {
 		}
 
 		bool Value () {
-			std::uniform_int_distribution<bool> distr;
-			return distr(gen);
+			// std::uniform_int_distribution<bool> distr;
+			// return distr(gen);
+			return (Range<int>(0,1) == 0);
 		}
 	}
 } 

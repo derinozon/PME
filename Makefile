@@ -10,9 +10,9 @@ WC = emcc
 WSHELL = --shell-file res/mm.html
 WBIND = --bind -s USE_SDL=2 -s ALLOW_MEMORY_GROWTH=1
 WFILE = --preload-file demo/res --use-preload-plugins
-
+#-lmingw32 
 ifeq ($(OS),Windows_NT)
-	LIB = -lmingw32 -lSDL2main -lSDL2
+	LIB = -lSDL2main -lSDL2
 else
 	LIB = -lSDL2
 endif

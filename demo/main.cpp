@@ -10,14 +10,7 @@
 using namespace std;
 
 #include "mario.h"
-// #include "alien.h"
-
-#include <string.h>
-#include <iostream>
-#include <algorithm>
-#include <cmath>
-#include <random>
-#include <sstream>
+#include "alien.h"
 
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
@@ -31,11 +24,10 @@ int main (int argv, char** args) {
 	};
 
 	if (PME::init(set)) {
-		mario();
+		alien();
+		//mario();
 		PME::run();
 	}
-
-	std::cout << "asdfasdf" << std::endl;
     
 	return 0;
 }
