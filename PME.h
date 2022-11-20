@@ -46,11 +46,6 @@
 	#include <SDL2/SDL_image.h>
 #endif
 
-#if IMG == 2
-	#define STB_IMAGE_IMPLEMENTATION
-	#include "./lib/stb_image.h"
-#endif
-
 #if MIX == 1
 	#include <SDL2/SDL_mixer.h>
 #endif

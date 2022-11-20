@@ -1,8 +1,12 @@
 #pragma once
 #include <typeinfo>
 
-#include "../lib/stb_image.h"
+// #include "../lib/stb_image.h"
 
+#if IMG == 2
+	#define STB_IMAGE_IMPLEMENTATION
+	#include "../include/stb_image.h"
+#endif
 
 namespace PME {
 	namespace Resources {
@@ -43,9 +47,10 @@ namespace PME {
 		Texture* LoadTexture (const char* path) {
 			#if IMG == 1
 			return IMG_LoadTexture(renderer, path);
-			#else
+			#elif IMG == 2
 			return SDL_CreateTextureFromSurface(renderer, LoadImage(path));
-			//return SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP(path));
+			#else
+			return SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP(path));
 			#endif
 		}
 		
