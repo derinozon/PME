@@ -19,13 +19,13 @@ int main (int argv, char** args) {
 	
 	EngineSettings set = {
 		"Game",
-		840,
-		480,
+		1280,
+		720,
 	};
 
 	if (PME::init(set)) {
-		alien();
-		//mario();
+		// alien();
+		mario();
 		PME::run();
 	}
     

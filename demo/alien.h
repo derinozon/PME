@@ -28,8 +28,8 @@ class PlayerController : public Component {
 			player->Translate(kVel.normalize() * 5 * Time.deltaTime);
 			player->angle = Math::Lerp(player->angle, xvel*20, Time.deltaTime * 7);
 		}
-
 };
+
 void alien () {
 	Entity* player = new Entity("Player");
 	auto sr = player->AddComponent<SpriteRenderer>();

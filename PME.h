@@ -13,7 +13,7 @@
 #endif
 
 #ifndef IMG
-	#define IMG 0
+	#define IMG 2
 #endif
 
 #ifndef MIX
@@ -32,8 +32,6 @@
 	#include <emscripten.h>
 #endif
 
-
-
 #include <string.h>
 #include <iostream>
 #include <algorithm>
@@ -46,6 +44,11 @@
 
 #if IMG == 1
 	#include <SDL2/SDL_image.h>
+#endif
+
+#if IMG == 2
+	#define STB_IMAGE_IMPLEMENTATION
+	#include "./lib/stb_image.h"
 #endif
 
 #if MIX == 1
