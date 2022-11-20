@@ -24,9 +24,10 @@ FetchContent_MakeAvailable(SDL2)
 # set(SDL_LIBRARIES ${SDL_LIBRARIES} SDL2main SDL2-static)
 
 
-add_executable(app demo/main.cpp)
+add_executable(app demo/main.cpp include/duktape/duktape.c)
 target_link_libraries(app PRIVATE SDL2main SDL2-static)
-# target_include_directories(app PRIVATE include)
+target_include_directories(app PRIVATE include)
+target_include_directories(app PRIVATE include/duktape)
 
 if (MINGW)
 	target_link_options(app PRIVATE -static-libgcc -static-libstdc++)

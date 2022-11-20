@@ -1,4 +1,5 @@
 #include "../PME.h"
+#include "../include/dukglue/dukglue.h"
 
 // #if TTF == 1
 // 	#if DEBUG == 1
@@ -11,6 +12,7 @@ using namespace std;
 
 #include "mario.h"
 #include "alien.h"
+#include "jstest.h"
 
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
@@ -25,7 +27,8 @@ int main (int argv, char** args) {
 
 	if (PME::init(set)) {
 		// alien();
-		mario();
+		// mario();
+		jstest();
 		PME::run();
 	}
     
