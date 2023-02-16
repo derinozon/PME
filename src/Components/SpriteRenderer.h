@@ -7,7 +7,6 @@ namespace PME {
     class SpriteRenderer : public Component {
 		private:
 			Transform* spriteT = nullptr;
-			
 
         public:
 			SDL_Rect rect;

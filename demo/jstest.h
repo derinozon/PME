@@ -21,10 +21,12 @@ void jstest () {
 
 	dukglue_register_constructor<Entity>(ctx, "Entity");
 	dukglue_register_method(ctx, &Entity::AddComponent<SpriteRenderer>, "AddRenderer");
+	dukglue_register_method(ctx, &Entity::GetComponent<Transform>, "GetTransform");
 
+	dukglue_register_function(ctx, &Debug::Log<string>, "Log");
+	// dukglue_register_function(ctx, &Debug::Log<Vector2>, "Log2");
 
-	duk_eval_string(ctx, "var ent = new Entity(); var sr = ent.AddRenderer();");
+	duk_eval_string(ctx, "var ent = new Entity(); var sr = ent.AddRenderer(); Log('ent.GetTransform().position');");
 
 	duk_destroy_heap(ctx);
-
 }

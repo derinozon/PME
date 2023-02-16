@@ -7,7 +7,7 @@
 // 	#endif
 // #endif
 
-// using namespace PME;
+using namespace PME;
 using namespace std;
 
 #include "mario.h"
@@ -27,8 +27,8 @@ int main (int argv, char** args) {
 
 	if (PME::init(set)) {
 		// alien();
-		// mario();
-		jstest();
+		mario();
+		// jstest();
 		PME::run();
 	}
     

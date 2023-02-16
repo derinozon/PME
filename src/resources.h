@@ -1,8 +1,6 @@
 #pragma once
 #include <typeinfo>
 
-// #include "../lib/stb_image.h"
-
 #if IMG == 2
 	#define STB_IMAGE_IMPLEMENTATION
 	#include "../include/stb_image.h"
@@ -23,18 +21,18 @@ namespace PME {
 
 			// Setup relevance bitmask
 			uint32_t Rmask, Gmask, Bmask, Amask;
-		#if SDL_BYTEORDER == SDL_LIL_ENDIAN
-			Rmask = 0x000000FF;
-			Gmask = 0x0000FF00;
-			Bmask = 0x00FF0000;
-			Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
-		#else
-			int s = (bytesPerPixel == 4) ? 0 : 8;
-			Rmask = 0xFF000000 >> s;
-			Gmask = 0x00FF0000 >> s;
-			Bmask = 0x0000FF00 >> s;
-			Amask = 0x000000FF >> s;
-		#endif
+			#if SDL_BYTEORDER == SDL_LIL_ENDIAN
+				Rmask = 0x000000FF;
+				Gmask = 0x0000FF00;
+				Bmask = 0x00FF0000;
+				Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
+			#else
+				int s = (bytesPerPixel == 4) ? 0 : 8;
+				Rmask = 0xFF000000 >> s;
+				Gmask = 0x00FF0000 >> s;
+				Bmask = 0x0000FF00 >> s;
+				Amask = 0x000000FF >> s;
+			#endif
 			SDL_Surface* surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel*8, pitch, Rmask, Gmask, Bmask, Amask);
 			if (!surface)
 			{

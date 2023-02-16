@@ -17,11 +17,8 @@ class PlayerController : public Component {
 		}
 
 		void Update () override {
-			int xvel, yvel;
-			xvel = yvel = 0;
-
-			xvel = Input.GetAxisRaw("Horizontal");
-			yvel = Input.GetAxisRaw("Vertical");
+			int xvel = Input.GetAxisRaw("Horizontal");
+			int yvel = Input.GetAxisRaw("Vertical");
 
 			auto kVel = Vector2(xvel, yvel);
 
